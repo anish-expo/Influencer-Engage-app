@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Progress Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monthly Progress Report - {{ month }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Campaigns Count</th>
+                
+                <th>Total Budget</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sponsor in data %}
+            <tr>
+                <td>{{ sponsor.name }}</td>
+                <td>{{ sponsor.email }}</td>
+                <td>{{ sponsor.campaigns_count }}</td>
+               
+                <td>{{ sponsor.total_budget }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Thank you for your continued partnership with our platform. We're excited to see your growth!</p>
+</body>
+</html>
